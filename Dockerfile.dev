@@ -1,0 +1,10 @@
+# Le inidcamos a aprtir de donde se construira la imagen (En este caso de python)
+FROM python:3.7
+# Le indicamos que vamos a crear ese directorio dentro del contenedor
+RUN mkdir -p /home/app/
+# le indicamos que vamos a instalar nodeamon de forma global
+WORKDIR /home/app/
+# Le indicamos que vamos a exponer el puerto 3000 dentro del contenedor
+EXPOSE 3000
+# Le inicamos que vamos a ejecutar el archivo main con python
+CMD ["python", "main.py"]

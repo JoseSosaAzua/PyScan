@@ -1,0 +1,15 @@
+# Indicamos la version de composer
+version: "3.9"
+# Indicamos los servicios a usar
+services:
+# Indicamos el nombre que tendra este servicio
+  netscan:
+# Le indicamos la ruta del archivo docker file para este servicio
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+# Le indicamos loe puertos a exponer
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/home/app
